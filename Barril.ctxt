@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Barril
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Barril\ here.\r\n\ \r\n\ \r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=x\ y
+comment1.target=Barril(int,\ int)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Perro\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ indica\ el\ movimiento\ de\ el\ barril.\r\n\ a\ si\ vomo\ su\ desplasamiento.\r\n
+comment3.params=
+comment3.target=int\ getX()
+comment3.text=\r\n\ Pocicion\ en\ x\ de\ el\ barril\r\n
+numComments=4

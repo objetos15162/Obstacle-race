@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Manzana
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Manzana\ here.\r\n\ \r\n\ Esta\ clase\ es\ encarga\ de\ la\ fruta\ manzana,\ dentro\ de\ ella\ se\ tiene\ su\ moviento,\r\n\ dentro\ de\ le\ mucndo.\r\n\ Clase\ realizada\ como\ parte\ de\ ta\ obtecion\ de\ puntos\ en\ el\ juego.\r\n\ te\ da\ un\ numero\ de\ puntos\ dentro\ al\ tomar\ el\ objeto.\r\n\ \r\n\ \r\n\ @author\ (sanjuana\ david)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Manzana\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=2

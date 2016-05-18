@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Nivel1
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Nivel1\ here.\r\n\ \r\n\ Esenario\ del\ primer,\ o\ mundo\ que\ se\ muestra\ en\ el\ juego,\ es\ utilsado\ por\ los\ direfentes\ onjetos\r\n\ utilisa\ todas\ las\ clases\ dentro\ del\ juego\ para\ el\ manejo\ del\ nivel.\r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Nivel1()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nivel1.\r\n\ \r\n
+comment2.params=
+comment2.target=Counter\ getPuntos()
+comment2.text=\r\n\ Regresa\ elvalor\ del\ contador\ \r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Indica\ el\ momento\ de\ el\ cambio\ de\ nivel.\r\n
+comment4.params=
+comment4.target=void\ prepare()
+comment4.text=\r\n\ Muestra\ los\ diferentes\ objetos\ en\ el\ nivel\ 1\r\n
+comment5.params=
+comment5.target=void\ juego()
+comment5.text=\r\n\ La\ animacion\ de\ los\ diferentes\ enemigos\ asi\ como\ obtaculos.\r\n\ La\ eliminacion\ de\ los\ objetos\ al\ desaparecer\ de\ la\ pantalla.\r\n
+numComments=6

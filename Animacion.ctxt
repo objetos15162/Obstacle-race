@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Animacion
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Animacion\ here.\r\n\ \r\n\ Clase\ encargada\ del\ llamado\ a\ las\ imagenes\ de\ los\ objetos,\ para\ \r\n\ poder\ mostrar\ el\ movimiento\ de\ o\ el\ cambio\ de\ imagen\r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Animacion()
+comment1.text=\r\n\ Constructor\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=nuevaImagen
+comment3.target=void\ setImagen(greenfoot.GreenfootImage)
+comment3.text=\r\n\ Crea\ la\ nueva\ imagen\r\n
+comment4.params=
+comment4.target=greenfoot.GreenfootImage\ dameActual()
+comment4.text=\r\n\ Manda\ la\ imagen\ actual\r\n
+comment5.params=
+comment5.target=void\ Update()
+comment5.text=\r\n\ Conteo\ de\ imagenes\r\n
+comment6.params=
+comment6.target=void\ Contar()
+comment6.text=\r\n\ Parametro\ de\ tiempo\r\n
+numComments=7

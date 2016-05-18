@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Platano
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Platano\ here.\r\n\ \r\n\ Esta\ clase\ es\ encarga\ de\ la\ fruta\ planatano,\ dentro\ de\ ella\ se\ tiene\ su\ moviento,\r\n\ dentro\ de\ le\ mucndo.\r\n\ Clase\ realizada\ como\ parte\ de\ ta\ obtecion\ de\ puntos\ en\ el\ juego.\r\n\ \r\n\ \r\n\ @author\ (Sanjuana,\ David\ )\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Platano\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+numComments=2
