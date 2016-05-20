@@ -27,7 +27,7 @@ public class Barril extends Actor
             
         }
     }
-        
+         
     
     /**
      * indica el movimiento de el barril.
@@ -36,8 +36,11 @@ public class Barril extends Actor
     public void act() 
     {
         setImage(a.dameActual());
-        X-=6;
+        X-=7;
         setLocation(X,Y);
+        if(getX()<0)
+            this.getWorld().removeObject(this);
+        
     }
     
     /**

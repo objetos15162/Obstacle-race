@@ -38,6 +38,10 @@ public class Mariposa extends Actor
         setImage(a.dameActual());
         X-=2;
         setLocation(X,Y);
+        if(X<=0)
+        {
+            this.getWorld().removeObject(this);
+        }
     }
     
     /**

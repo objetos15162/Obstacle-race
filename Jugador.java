@@ -27,8 +27,11 @@ public class Jugador extends Actor
     private boolean derrape;
     private boolean caida;
     private boolean levantate;
+    private boolean tocar;
     private int puntos;
-    
+    int vidas=1;
+    Nivel1 niv;
+    SimpleTimer time = new SimpleTimer();
     /**
      * Act - do whatever the Jugador wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -38,9 +41,10 @@ public class Jugador extends Actor
         run=new Animacion();
         jump=new Animacion();
         der=new Animacion();
-        puntos=13;
+        puntos=0;
         x=X;
         y=Y;
+        time.mark();
         for(int i=1;i<6;i++)
         {
             run.setImagen( new GreenfootImage("jugadoroficial"+i+".png"));
@@ -81,7 +85,7 @@ public class Jugador extends Actor
             setImage(run.dameActual());
         }
          setLocation(x,y);
-    } 
+    }
     
     /**
      * Verifica teclas, indicando la activacion e banderas.
@@ -164,26 +168,46 @@ public class Jugador extends Actor
      */
     public int tocaEnemigo()
     {
-        int vidas=0;
-      if(isTouching(Perro.class)||isTouching(Mariposa.class)||isTouching(Barril.class))
+        if(time.millisElapsed()>500)
+        {
+      if(isTouching(Perro.class)||isTouching(Mariposa.class)||isTouching(Barril.class)||isTouching(Oso.class)||isTouching(Venado.class)||isTouching(Serpiente.class)||isTouching(Gato.class))
       {
-          vidas=1;
-    
+          if(vidas<13)
+          {vidas+=1;
+            }else{
+                vidas=0;
+            }
      }
+     time.mark();
       return vidas;
-    }
+    }else
+    return vidas;
+}
     
     /**
      * Metodo que verifica cuando se toco una fruta
      */
     public void atrapaFruta()
     {
-        if(isTouching(Manzana.class)||isTouching(Platano.class))
+        if(isTouching(Manzana.class) &&Greenfoot.isKeyDown("a") )
         {
             removeTouching(Manzana.class);
-            removeTouching(Platano.class);
             puntos++;
-            //System.out.println("siii");
+        }
+         if(isTouching(Platano.class) &&Greenfoot.isKeyDown("a") )
+        {
+            removeTouching(Platano.class);
+            puntos+=5;
+        }
+        if(isTouching(Toronja.class) &&Greenfoot.isKeyDown("a") )
+        {
+            removeTouching(Toronja.class);
+            puntos+=10;
+        }
+        if(isTouching(Uva.class) &&Greenfoot.isKeyDown("a") )
+        {
+            removeTouching(Uva.class);
+            puntos+=25;
         }
     }
     
@@ -195,4 +219,13 @@ public class Jugador extends Actor
         return puntos;
     }
     
+    public void setPuntos(int punt)
+    {
+        puntos=punt;
+    }
+    
+    public int vida()
+    {
+        return vidas;
+    }
 }

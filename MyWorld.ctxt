@@ -1,13 +1,11 @@
 #BlueJ class context
-comment0.target=MyWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ En\ esta\ clase\ se\ tien\ lo\ ques\ el\ menu\ su\ funcionamiento\ es\ mostrar,\ el\ menu\ \r\n\ principal,\ utilisa\ mediante\ mensajes\ a\ las\ clases\ de\ botones\ del\ menu\ que\ indica\ \r\n\ a\ que\ lugar\ deceas\ entra,\ me\ tiene\ un\ mensaje\ que\ te\ envia\ a\ la\ clase\ que\ uno\ dece\r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.params=
+comment0.target=MyWorld()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
 comment1.params=
-comment1.target=MyWorld()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
+comment1.target=void\ act()
+comment1.text=\r\n\ Metodo\ que\ verifica\ que\ accion\ se\ de\ desea\ o\ se\ realiza.\r\n
 comment2.params=
-comment2.target=void\ act()
-comment2.text=\r\n\ Metodo\ que\ verifica\ que\ accion\ se\ de\ desea\ o\ se\ realiza.\r\n
-comment3.params=
-comment3.target=void\ erase()
-comment3.text=\r\n\ Indica\ la\ pocion\ de\ los\ objetos\ en\ menu.\r\n
-numComments=4
+comment2.target=void\ erase()
+comment2.text=\r\n\ Indica\ la\ pocion\ de\ los\ objetos\ en\ menu.\r\n
+numComments=3

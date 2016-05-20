@@ -22,6 +22,11 @@ public class Platano extends Actor
          int xn = Greenfoot.getRandomNumber(11) -5;
         int yn = Greenfoot.getRandomNumber(11) -5;
         setLocation(getX()+xn,getY()+yn);
-        move(-1);
+        move(-3);
+        if(getX()<=0)
+        {
+            this.getWorld().removeObject(this);
+        }
+        
     }    
 }

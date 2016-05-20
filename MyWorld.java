@@ -17,7 +17,7 @@ public class MyWorld extends World
    Records records=new Records();
    Salir salir=new Salir();
    GreenfootImage im;
-   
+   SimpleTimer timer = new SimpleTimer();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -40,8 +40,9 @@ public class MyWorld extends World
     {   
         if(Greenfoot.mouseClicked(juego))
         {
-         Nivel1 level=new Nivel1();
-         Greenfoot.setWorld(level);
+            
+           Nivel1 level=new Nivel1();
+           Greenfoot.setWorld(level);
          
         }
         if(Greenfoot.mouseClicked(ayuda))

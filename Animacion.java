@@ -96,5 +96,6 @@ public class Animacion extends Actor
         timer = new Timer();
         timer.schedule(new tiempo(), 0, 100);
     }
+    
    
 }

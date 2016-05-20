@@ -43,7 +43,7 @@ public class Scroll extends Actor
         x-=2;
         if(x==0)
         {
-        x=600;
+        x=560;
         i++;
         if(i<6)
         juego=true;

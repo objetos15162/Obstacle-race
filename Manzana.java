@@ -25,10 +25,14 @@ public class Manzana extends Actor
         int yn = Greenfoot.getRandomNumber(11) -5;
         setLocation(getX()+xn,getY()+yn);
         move(-1);
-       /* if(Greenfoot.getRandomNumber(2)==0)
+        if(getX()<=0)
         {
-            turn(Greenfoot.getRandomNumber(90)-45);
-        }*/
+        this.getWorld().removeObject(this);
+        
+        
+  
+    }
+       
     }    
 }
 

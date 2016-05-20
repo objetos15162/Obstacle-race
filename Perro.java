@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Clase perro enemigo del jugador, lo que hace esta clase es el maneno del moviento,
  *y la posicion la que se encuentra.
  * 
- * @author (Sanjuana David) 
+ * @author (Sanjuana,Oscar) 
  * @version (a version number or a date)
  */
 public class Perro extends Actor
@@ -35,10 +35,13 @@ public class Perro extends Actor
      */
     public void act() 
     {
-        setImage(a.dameActual());
-        X-=6;
-        setLocation(getX(),getY());
-        
+        setImage(a.dameActual()); 
+        X-=7;
+        setLocation(X,Y);
+        if(X<=0)
+        {
+            this.getWorld().removeObject(this);
+        }
     }
     
     /**

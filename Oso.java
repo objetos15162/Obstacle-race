@@ -37,8 +37,10 @@ public class Oso extends Actor
     public void act() 
     {
         setImage(a.dameActual());
-        X-=4;
+        X-=7;
         setLocation(X,Y);
+        if(X<=0)
+        this.getWorld().removeObject(this);
     }
     
     /**

@@ -34,7 +34,10 @@ public class Vida extends Actor
      */
     public void cuentaVida(int i)
     {
-        
+           if(i<12)
+        {
        setImage("VIDA"+i+".png"); 
+       
     }
+  }
 }
