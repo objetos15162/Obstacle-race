@@ -1,12 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Toronja here.
- * 
- * @author (your name) 
+ * Esta clase es encarga de la fruta toronja, dentro de ella se tiene su moviente,
+ * dentro de le mundo.
+
+ * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Toronja extends Actor
+public class Toronja extends Fruta
 {
     /**
      * Act - do whatever the Toronja wants to do. This method is called whenever
@@ -14,13 +15,16 @@ public class Toronja extends Actor
      */
     public void act() 
     {
-        int xn = Greenfoot.getRandomNumber(11) -5;
-        int yn = Greenfoot.getRandomNumber(11) -5;
-        setLocation(getX()+xn,getY()+yn);
-        move(-5);
-        if(getX()<=0)
-        {
-            this.getWorld().removeObject(this);
+        super.move();
+        super.elimina();
+        
+    
+     }    
+     
+     /**
+      * Constructor
+      */
+     public Toronja()
+     {
         }
-    }    
 }

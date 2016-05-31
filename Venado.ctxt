@@ -1,10 +1,10 @@
 #BlueJ class context
-comment0.params=x\ y
-comment0.target=Venado(int,\ int)
-comment0.text=\r\n\ Act\ -\ do\ whatever\ the\ Venado\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-comment1.params=
-comment1.target=void\ act()
+comment0.target=Venado
+comment0.text=\r\n\ \r\n\ Clase\ venado\ enemigo\ de\ jugador,\ indica\ el\ movimiento\ ya\ nimacion\ de\ \r\n\ el\ objeto.\r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=x\ y
+comment1.target=Venado(int,\ int)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Venado\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
-comment2.target=int\ getX()
-comment2.text=\r\n\ Regresa\ el\ valor\ de\ pacicion\ en\ x\ de\ el\ perro\r\n
+comment2.target=void\ act()
+comment2.text=\r\n\ Metodo\ act\r\n
 numComments=3

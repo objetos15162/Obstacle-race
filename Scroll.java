@@ -1,10 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scroll here.
  * 
- * Clase scroll es encardad de el movimiento del moviento de la imagen de el
- * nivel.
+ * Clase scroll es encardad del movimiento de la imagen de los niveles.
  * 
  * 
  * @author (Sanjuana David) 
@@ -12,16 +10,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Scroll extends Actor
 {
-    GreenfootImage im;
-    int x,y,i=0;
-    boolean juego;
+    private GreenfootImage im;
+    private int i=0;
+    private boolean juego;
     public Scroll(int X,int Y,GreenfootImage fondo)
     {
-     x=X;
-     y=Y;
      im=fondo;
-     setImage(im);
-        
+     setImage(im);  
     }
     
     /**
@@ -30,7 +25,7 @@ public class Scroll extends Actor
      */
     public void act() 
     {
-        setLocation(x,y);
+        setLocation(getX()-2,getY());
         setImage(im);
     }  
     
@@ -40,10 +35,13 @@ public class Scroll extends Actor
     */ 
     public void desplaza()
     {
-        x-=2;
+        int x;
+        x=getX();
+        //x-=2;
         if(x==0)
         {
         x=560;
+        setLocation(x,getY());
         i++;
         if(i<6)
         juego=true;
@@ -53,7 +51,7 @@ public class Scroll extends Actor
     }
     
     /**
-     * indica la poccion de la figura
+     * Indica la poccion de la figura
      */
     public GreenfootImage imagen()
     {
@@ -61,7 +59,7 @@ public class Scroll extends Actor
     }
     
     /**
-     * regresa el valor en i
+     * Regresa el valor en i
      */
      public int i()
     {

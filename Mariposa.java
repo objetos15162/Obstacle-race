@@ -1,7 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Perro here.
  * 
  * Clase mariposa enemigo de jugador, indica el movimiento ya nimacion de 
  * el objeto.
@@ -9,10 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Mariposa extends Actor
+public class Mariposa extends Enemigo
 {
-    int X,Y;
-    Animacion a=new Animacion();
+    private Animacion mari=new Animacion(new GreenfootImage("mariposaoficial1.png"));
     /**
      * Act - do whatever the Perro wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,35 +18,23 @@ public class Mariposa extends Actor
     
     public Mariposa(int x,int y)
     {
-        X=x;
-        Y=y;
-         for(int i=1;i<3;i++)
+        super(x,y);
+         for(int i=1;i<5;i++)
         {
-            a.setImagen( new GreenfootImage("mariposaoficial"+i+".png"));
-            
+           mari.setImagen( new GreenfootImage("mariposaoficial"+i+".png"));
         }
+       
     }
         
     /**
-     * Imagen actual
-     * Indica la pacion
+     *Metodo act
      */
     public void act() 
     {
-        setImage(a.dameActual());
-        X-=2;
-        setLocation(X,Y);
-        if(X<=0)
-        {
-            this.getWorld().removeObject(this);
-        }
-    }
-    
-    /**
-     * Manda la dirreccion en x
-     */
-    public int getX()
-    {
-        return X;
+        setImage(mari.dameActual());
+        this.mari.cambio();
+        super.elimina();
+        //super.getX();
+        super.posicion();
     }
 }

@@ -1,7 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Manzana here.
  * 
  * Esta clase es encarga de la fruta manzana, dentro de ella se tiene su moviento,
  * dentro de le mucndo.
@@ -12,7 +11,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (sanjuana david) 
  * @version (a version number or a date)
  */
-public class Manzana extends Actor
+public class Manzana extends Fruta
 {
   
     /**
@@ -21,19 +20,19 @@ public class Manzana extends Actor
      */
     public void act() 
     {
-        int xn = Greenfoot.getRandomNumber(11) -5;
-        int yn = Greenfoot.getRandomNumber(11) -5;
-        setLocation(getX()+xn,getY()+yn);
-        move(-1);
-        if(getX()<=0)
-        {
-        this.getWorld().removeObject(this);
-        
-        
-  
-    }
+        super.move();
+        super.elimina();
+    
+    
        
-    }    
+    }   
+    
+    /**
+     * Constructor
+     */
+    public Manzana()
+    {
+    }
 }
 
 

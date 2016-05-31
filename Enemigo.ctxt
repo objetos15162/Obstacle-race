@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Enemigo
+comment0.text=\r\n\ \r\nClase\ enemigo,\ padre\ de\ las\ sub\ clases\ de\ enemigo,\ indica\ los\ comportamientos\ entre\ \r\nlos\ enemigos\ en\ el\ mundo.\r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=X\ Y
+comment2.target=Enemigo(int,\ int)
+comment2.text=\r\n\ Constructor\r\n
+comment3.params=
+comment3.target=void\ elimina()
+comment3.text=\r\n\ Elimina\ el\ enemigo\ de\ el\ mundo.\r\n
+comment4.params=
+comment4.target=void\ posicion()
+comment4.text=\r\n\ Indica\ la\ posicion\ en\ la\ cual\ se\ mueve\ el\ enemigo.\r\n
+comment5.params=
+comment5.target=void\ posicion2()
+numComments=6

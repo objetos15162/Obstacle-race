@@ -1,30 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Help here.
  * 
- * Clase que muestra la ayuda
+ * Clase que muestra la ayuda.
+ * Indica el como saltar, agacharte y tomar objetos en el juego.
  * 
  * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
 public class Help extends World
 {
-    Ayuda ayuda=new Ayuda();
-    GreenfootImage im;
+     private Ayuda ayuda=new Ayuda();
+     private GreenfootImage im;
     /**
      * Constructor for objects of class Help.
      * 
      */
     public Help()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
     }
     
     /**
-     * Veridica si se solicita ayuda o se decean salir de ayuda.
+     * Verifica si se solicita ayuda o se desea salir de ayuda.
      */
     public void act()
     {
@@ -41,7 +40,7 @@ public class Help extends World
         }
         
        /**
-        * mEtodo que regresa a el menu inicial.
+        * Metido que regresa a el menú inicial.
         */
     public void erase()
      {

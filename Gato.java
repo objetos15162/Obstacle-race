@@ -1,47 +1,42 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Gato here.
  * 
- * @author (your name) 
+ * Clase gato enemigo de jugador, indica el movimiento ya nimacion de 
+ * el objeto.
+ * 
+ * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Gato extends Actor
+public class Gato extends Enemigo
 {
-    int X,Y;
-    Animacion a=new Animacion();
+    private Animacion gato=new Animacion(new GreenfootImage("gatooficial1.png"));
     /**
      * Act - do whatever the Gato wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
-        setImage(a.dameActual());
-        X-=10;
-        setLocation(getX(),getY());
-        if(getX()<0)
-            this.getWorld().removeObject(this);
-        
+        setImage(gato.dameActual());
+        this.gato.cambio();
+        super.elimina();
+       // super.getX();
+        super.posicion();
     }
     
+    /**
+     * Contructor
+     */
     public Gato(int x,int y)
     {
-        X=x;
-        Y=y;
-         for(int i=1;i<3;i++)
+        super(x,y);
+         for(int i=1;i<5;i++)
         {
-            a.setImagen( new GreenfootImage("gatooficial"+i+".png"));
+            gato.setImagen( new GreenfootImage("gatooficial"+i+".png"));
             
         }
-    }
-    
-     /**
-     * Regresa el valor de pacicion en x de el perro
-     */
-    public int getX()
-    {
-        return X;
+        setImage( new GreenfootImage("gatooficial1.png"));
+        gato.Update();
     }
     }    
 

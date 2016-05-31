@@ -1,23 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
  * 
- * En esta clase se tien lo ques el menu su funcionamiento es mostrar, el menu 
- * principal, utilisa mediante mensajes a las clases de botones del menu que indica 
- * a que lugar deceas entra, me tiene un mensaje que te envia a la clase que uno dece
+ * En esta clase se tiene lo que el menú su funcionamiento es mostrar, el menú 
+ * principal, utiliza mediante mensajes a las clases de botones del menú que indica 
+ * a qué lugar deseas entra, me tiene un mensaje que te envía a la clase que uno dese
+
  * 
  * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
 public class MyWorld extends World
 {
-   Jugar juego=new Jugar();
-   Ayuda ayuda=new Ayuda();
-   Records records=new Records();
-   Salir salir=new Salir();
-   GreenfootImage im;
-   SimpleTimer timer = new SimpleTimer();
+   private Jugar juego=new Jugar();
+   private Ayuda ayuda=new Ayuda();
+   private GreenfootImage im;
+   private SimpleTimer timer = new SimpleTimer();
+    private GreenfootImage imgen=new GreenfootImage("NIVEL1.png");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -28,19 +27,19 @@ public class MyWorld extends World
         super(600, 400, 1); 
         addObject(juego,500,100);
         addObject(ayuda,500,170);
-        addObject(records,500,240);
-        addObject(salir,500,310);
-        
     }
     
     /**
-     * Metodo que verifica que accion se de desea o se realiza.
+     * Método que verifica que acción se dé desea o se realiza.
      */
     public void act()
     {   
         if(Greenfoot.mouseClicked(juego))
         {
-            
+            removeObject(juego);
+            removeObject(ayuda);
+            setBackground(imgen);
+          Greenfoot.delay(100);
            Nivel1 level=new Nivel1();
            Greenfoot.setWorld(level);
          
@@ -61,8 +60,7 @@ public class MyWorld extends World
     {
         removeObject(juego);
          removeObject(ayuda);
-          removeObject(records);
-           removeObject(salir);
+          
     }
     
     }

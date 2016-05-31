@@ -1,11 +1,13 @@
 #BlueJ class context
-comment0.params=
-comment0.target=MyWorld()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
+comment0.target=MyWorld
+comment0.text=\r\n\ \r\n\ En\ esta\ clase\ se\ tiene\ lo\ que\ el\ men\u00FA\ su\ funcionamiento\ es\ mostrar,\ el\ men\u00FA\ \r\n\ principal,\ utiliza\ mediante\ mensajes\ a\ las\ clases\ de\ botones\ del\ men\u00FA\ que\ indica\ \r\n\ a\ qu\u00E9\ lugar\ deseas\ entra,\ me\ tiene\ un\ mensaje\ que\ te\ env\u00EDa\ a\ la\ clase\ que\ uno\ dese\r\n\r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Metodo\ que\ verifica\ que\ accion\ se\ de\ desea\ o\ se\ realiza.\r\n
+comment1.target=MyWorld()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
 comment2.params=
-comment2.target=void\ erase()
-comment2.text=\r\n\ Indica\ la\ pocion\ de\ los\ objetos\ en\ menu.\r\n
-numComments=3
+comment2.target=void\ act()
+comment2.text=\r\n\ M\u00E9todo\ que\ verifica\ que\ acci\u00F3n\ se\ d\u00E9\ desea\ o\ se\ realiza.\r\n
+comment3.params=
+comment3.target=void\ erase()
+comment3.text=\r\n\ Indica\ la\ pocion\ de\ los\ objetos\ en\ menu.\r\n
+numComments=4

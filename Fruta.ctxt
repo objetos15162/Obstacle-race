@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Fruta
+comment0.text=\r\n\ Clase\ frutas\ indica\ el\ movimiento,\ asi\ como\ la\ eliminicion\ de\ las\r\n\ frutas.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Fruta\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ elimina()
+comment3.params=
+comment3.target=void\ move()
+numComments=4

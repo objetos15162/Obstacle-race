@@ -1,30 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Nivel3 here.
  * 
  * Clase que indica el mundo de el nivel 3
+ * Nivel 3.
+ * Indica los diferentes animales del nivel3, asi como los diferentes atributos.
  * 
  * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Nivel3 extends World
+public class Nivel3 extends Nivel
 {
-    Jugador player=new Jugador(100,300);
-    Oso oso = new Oso(600,300);
-    Mariposa marip = new Mariposa(590,230);
-    Venado venado = new Venado(600,300);
-    Serpiente serp = new Serpiente(600,300);
-    Manzana manzana = new Manzana();
-    Platano platano = new Platano();
-    Toronja toronja = new Toronja();
-    Uva uva = new Uva();
-    int valor,mark;
-    Counter cont=new Counter();
-    Vida vida=new Vida();
-    SimpleTimer timer = new SimpleTimer();
-     SimpleTimer timer2 = new SimpleTimer();
-    Scroll scroll=new Scroll(500,200,new GreenfootImage("MundoSelva.png"));
+    
+    private Oso oso = new Oso(600,330,true);
+    private Oso oso2= new Oso(0,330,false);
+    private Mariposa marip = new Mariposa(590,200);
+    private Venado venado = new Venado(600,330);
+    private Venado venado2 = new Venado(0,350);
+    private Serpiente serp = new Serpiente(600,350);
+    private Tronco tronco = new Tronco(650,350);
+    private Piedra piedra = new Piedra(700,350);
+    private int valor;
+    private int suma;
+    private int mark;
+    private Counter cont=new Counter();
+    private SimpleTimer timer2 = new SimpleTimer();
+    private Scroll scroll=new Scroll(500,200,new GreenfootImage("MundoSelva.png"));
+    private GreenfootImage im= new GreenfootImage("NIVEL4.png");
+    
     /**
      * Constructor for objects of class Nivel3.
      * 
@@ -32,7 +35,7 @@ public class Nivel3 extends World
     public Nivel3(Vida v,Counter c)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(560, 400, 1); 
+        super(); 
         prepare();
         cont=c;
         vida=v;
@@ -46,8 +49,8 @@ public class Nivel3 extends World
     */
     public void prepare()
     {
-        addObject(scroll,50,300);
-        addObject(player,50,300);
+        addObject(scroll,50,200);
+        addObject(player,180,320);
         
     }
     
@@ -58,68 +61,27 @@ public class Nivel3 extends World
     {
         creaObjetos();
         CreaEnemigos();
-        if(scroll.i()<10)
+        eliminVida();
+        if(scroll.i()<6)
        {
-        juego();
+          juego();
       }else{
-          Greenfoot.stop(); 
-         
+           removeObject(scroll);
+          removeObject(cont);
+          super.borra();
+          borrar();
+          setBackground(im);
+          Greenfoot.delay(100);
              MyWorld menu=new MyWorld();
              Greenfoot.setWorld(menu);
-           
             
-        }
-      if(player.tocaEnemigo()!=0)
-       { vida.cuentaVida(player.tocaEnemigo());
-       cont.setValue(valor);
-        mark=player.getPuntos();
-      }else{
-          
-          MyWorld menu=new MyWorld();
-          Greenfoot.setWorld(menu);
-          
         }
    }
    
-   
-   public void creaObjetos()
-  {
-    if(timer2.millisElapsed()>1000)
-        {
-            int objecto = Greenfoot.getRandomNumber(5);
-            if(objecto==1)
-            {
-            addObject(serp,900,330);
-          }else if(objecto==2)
-            {
-            addObject(oso,900,330);
-          }else if(objecto==3)
-            {
-            addObject(marip,900,330);
-          }else if(objecto==4)
-            {
-            addObject(venado,900,330);
-          }
-            timer2.mark();
-        } 
-   if(timer.millisElapsed()>800)
-        {
-            int objecto = Greenfoot.getRandomNumber(5);
-            if(objecto==1)
-            {
-
-            addObject(toronja,900,330);
-          }else if(objecto==2)
-            {
-            addObject(uva,900,330);
-          }else if(objecto==3)
-            {
-            addObject(platano,900,330);
-          }
-            timer.mark();
-        } 
-    }
-   
+  
+   /**
+    * Metodo de el scroll de el juego.
+    */
    public void juego()
     {
         scroll.desplaza(); 
@@ -127,31 +89,81 @@ public class Nivel3 extends World
        
     }
     
+    /**
+     * Metodo que tegresa el valor de x;
+     */
     public void setValor(int x)
     {
      valor=x;   
    }
    
+  /**
+   * Metodo que crea a los enemigos de el nivel.
+   */ 
      public void CreaEnemigos()
     {
-        int objeto= Greenfoot.getRandomNumber(5)+1;
-        if(timer2.millisElapsed()>2000)
+        int objeto= Greenfoot.getRandomNumber(8)+1;
+        if(timer2.millisElapsed()>1000)
         {
-            System.out.println(objeto+"Fuck you");
+            
             if(objeto==1)
             {
-            addObject(oso,1300,330);
+            addObject(oso,1300,340);
           }else if(objeto==2)
             {
-            addObject(marip,1300,330);
+            addObject(marip,1300,250);
           }else if(objeto==3)
             {
-            addObject(venado,1300,330);
+            addObject(venado,1300,340);
           }else if(objeto==4)
             {
-            addObject(serp,1300,330);
+            addObject(serp,1300,380);
+          }else if(objeto==5)
+          {
+            addObject(venado2,10,340);
+            }else if(objeto==6)
+            {
+            addObject(oso2,100,350);
+          }else if(objeto==7)
+            {
+            addObject(tronco,1300,360);
+          }else if(objeto==8)
+            {
+            addObject(piedra,1300,360);
           }
+            
             timer2.mark();
         } 
+    }
+    
+    /**
+     * Metodo que modifica la barra de vida.
+     */
+    public void eliminVida()
+   {
+        if(player.tocaEnemigo()!=0)
+       { vida.cuentaVida(player.tocaEnemigo());
+        cont.setValue(valor+mark+suma);
+        mark=player.getPuntos();
+      }else{
+         
+          MyWorld menu=new MyWorld();
+          Greenfoot.setWorld(menu);
+          
+        }
+    }
+    
+    /**
+     * Metodo encargado de eliminar los objetos.
+     */ 
+    public void borrar()
+   {
+    removeObject(oso);
+    removeObject(venado);
+    removeObject(marip);
+    removeObject(serp);
+    removeObject(tronco);
+    removeObject(piedra);
+    removeObject(oso2);
     }
 }

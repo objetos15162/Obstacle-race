@@ -1,27 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Jugador here.
  * 
- * Clase jugador relisa todos los metodos o asiennes del jugador nadamas,
- * la clase de jugador se encarga del movimiento del jugador(correr, que es por defaul)
- * el saltar o agacharse, asi como el obtener punto(al tocar a un objeto de la clase 
- * de frutas que te da puntuacion), de igual manera al momento de tocar a un enemigo
+ *Clase jugador realiza todos los métodos o acciones del jugador,
+ * la clase de jugador se encarga del movimiento del jugador (correr, que es por default)
+ * el saltar o agacharse, así como el obtener punto (al tocar a un objeto de la clase 
+ * de frutas que te da puntuación), de igual manera al momento de tocar a un enemigo
  * (se le eliminara vida).
- * Indica los motodos del jugador.
  * 
- * Tienes dentro de ello, el mensaje de informacion a nivel, asi como nosotro mandamos 
+ * Tienes dentro de ello, el mensaje de información a nivel, así como nosotros mandamos 
  * mensajes a las clases de frutas, enemigos, vidas.
- * 
+ *
  * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
 public class Jugador extends Actor
-{   Animacion jump;
-    Animacion der;
-    Animacion run;
-    private int x;
-    private int y;
+{   private Animacion jump;
+    private Animacion der;
+    private Animacion run;
     private int dir;
     private boolean salto;
     private boolean derrape;
@@ -29,22 +25,21 @@ public class Jugador extends Actor
     private boolean levantate;
     private boolean tocar;
     private int puntos;
-    int vidas=1;
-    Nivel1 niv;
-    SimpleTimer time = new SimpleTimer();
+    private int vidas;
+    private Nivel1 niv;
+    private SimpleTimer time = new SimpleTimer();
     /**
      * Act - do whatever the Jugador wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Jugador(int X,int Y)  
      {
-        run=new Animacion();
-        jump=new Animacion();
-        der=new Animacion();
+        run=new Animacion(new GreenfootImage("jugadoroficial1.png"));
+        jump=new Animacion(new GreenfootImage("salto1.png"));
+        der=new Animacion(new GreenfootImage("derape2.png"));
         puntos=0;
-        x=X;
-        y=Y;
         time.mark();
+        vidas=1;
         for(int i=1;i<6;i++)
         {
             run.setImagen( new GreenfootImage("jugadoroficial"+i+".png"));
@@ -64,7 +59,8 @@ public class Jugador extends Actor
     }
     
     /**
-     * muestra las imagenes dependiendo de que objeto se esta verificando.
+     * Muuestra las imágenes dependiendo de que objeto se está verificando.
+     * realiza la acción de los métodos checTecla y atrapaFruta.
      */
     public void act() 
     {
@@ -74,21 +70,24 @@ public class Jugador extends Actor
         {
             salta();
             setImage(jump.dameActual());
+            jump.cambio();
         }else if (derrape)
         {
             derrape();
            setImage(der.dameActual()); 
+           der.cambio();
         }
         else
         {
             
             setImage(run.dameActual());
+            run.cambio();
         }
-         setLocation(x,y);
+         setLocation(getX(),getY());
     }
     
     /**
-     * Verifica teclas, indicando la activacion e banderas.
+     *Verifica teclas, indicando la activación de la acción del jugador.
      */
     public void checTecla()
     {
@@ -113,22 +112,22 @@ public class Jugador extends Actor
       }
     
     /**
-     * Metodo que indica el salto de el jugador.
+     * Método que indica el salto del jugador.
      */
     public void salta()
     {
-        if(y<200)
+        if(getY()<200)
         {
         caida=false;
        }
         if(caida==true)
         {
-        y-=5;
+        setLocation(getX(),getY()-5);
        }
         else{
-            if(y<310)
+            if(getY()<310)
             {
-             y+=5;
+             setLocation(getX(),getY()+5);
             }
             else{
                 salto=false;
@@ -138,24 +137,23 @@ public class Jugador extends Actor
     }
     
     /**
-     * Metodo que indica derrape de el jugador.
+     * Método que indica derrape del jugador.
      */
     public void derrape()
     {
-       if(y>290)
+       if(getY()>290)
        {
            levantate=false;
         }
         if(levantate==true)
         {
-            
-          y++;
-       }
+            setLocation(getX(),getY()+1);
+        }
        else
        {
-           if(y>360)
+           if(getY()>360)
            {
-               y--;
+               setLocation(getX(),getY()-1);
             }
             else{
                 derrape=false;
@@ -164,28 +162,34 @@ public class Jugador extends Actor
     }
     
     /**
-     * Metodo que indica cuando toco a el enemigo.
+     * indica cuando toco a el enemigo.
      */
     public int tocaEnemigo()
-    {
-        if(time.millisElapsed()>500)
+     {
+        if(time.millisElapsed()>200)
         {
-      if(isTouching(Perro.class)||isTouching(Mariposa.class)||isTouching(Barril.class)||isTouching(Oso.class)||isTouching(Venado.class)||isTouching(Serpiente.class)||isTouching(Gato.class))
+      if(isTouching(Perro.class)||isTouching(Mariposa.class)||
+      isTouching(Barril.class)||isTouching(Oso.class)||
+      isTouching(Venado.class)||isTouching(Serpiente.class)||
+      isTouching(Gato.class)||
+     isTouching(Tronco.class)||
+      isTouching(Pasto.class))
       {
           if(vidas<13)
           {vidas+=1;
             }else{
                 vidas=0;
             }
-     }
-     time.mark();
+      time.mark();
+        }
+      
       return vidas;
-    }else
-    return vidas;
-}
+     }else
+     return vidas;
+    }
     
     /**
-     * Metodo que verifica cuando se toco una fruta
+     * Método que verifica cuando se tocó una fruta
      */
     public void atrapaFruta()
     {
@@ -212,20 +216,28 @@ public class Jugador extends Actor
     }
     
     /**
-     * Metodo que regre los puntos
+     *Método que regresa los puntos
      */
     public int getPuntos()
     {
         return puntos;
     }
-    
+   
+    /**
+     * Método que regresa una llamada de asceso.
+     */
     public void setPuntos(int punt)
     {
         puntos=punt;
     }
     
+    /**
+     * Método que regresa lo vida.
+     */
     public int vida()
     {
         return vidas;
     }
+    
 }
+

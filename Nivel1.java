@@ -1,50 +1,41 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Nivel1 here.
  * 
- * Esenario del primer, o mundo que se muestra en el juego, es utilsado por los direfentes onjetos
+ * Esenario del primer nivel que se muestra en el juego, es utilsado por los direfentes onjetos
  * utilisa todas las clases dentro del juego para el manejo del nivel.
  * 
  * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Nivel1 extends World
+public class Nivel1 extends Nivel
+
 {
-    Jugador player=new Jugador(100,300);//VALOR INICIAL
-    Perro perro=new Perro(590,330);
-    Gato gato = new Gato(600,330);
-    Barril barril=new Barril(590,330);
-    Mariposa marip=new Mariposa(590,230);
-    SimpleTimer timer = new SimpleTimer();
-    SimpleTimer timer2 = new SimpleTimer();
-    Vida vida= new Vida();
-    Manzana manzana = new Manzana();
-    Platano platano = new Platano();
-    Toronja toronja = new Toronja();
-    Uva uva = new Uva();
+    private Perro perro=new Perro(590,330);
+    private Gato gato = new Gato(600,330);
+    private Barril barril=new Barril(590,330);
+    private Mariposa marip=new Mariposa(590,200);
+    private SimpleTimer timer2 = new SimpleTimer();
     private Counter puntos;
-    Scroll scroll=new Scroll(500,200,new GreenfootImage("MundoCuid.png"));
-    Nivel2 niv2;
-    int mark=0;
-    private GreenfootImage im;
-    /**
+    private Scroll scroll=new Scroll(500,200,new GreenfootImage("MundoCuid.png"));
+    private Nivel2 niv2;
+    private int mark=0;
+    private GreenfootImage im=new GreenfootImage("NIVEL2.png");
+  /**
      * Constructor for objects of class Nivel1.
      * 
      */
     public Nivel1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(560, 400, 1); 
-        timer.mark();
+        super(); 
+        
         timer2.mark();
         puntos = new Counter("Puntos: "); 
-        im =new GreenfootImage("NIVEL2.png");
-       
         prepare();
     }
     
-    /**
+  /**
      * Regresa el valor del contador 
      */
     public Counter getPuntos()
@@ -52,13 +43,14 @@ public class Nivel1 extends World
         return puntos;
     }
     
-    /**
+  /**
      * Indica el momento de el cambio de nivel.
      */
     public void act()
     {
-        creaObjetos();
+        super.creaObjetos();
         CreaEnemigos();
+        eliminVida();
         if(scroll.i()<4) 
        {
         juego();
@@ -67,14 +59,25 @@ public class Nivel1 extends World
         //setBackground(im);
         //Greenfoot.delay(100);
           mark=player.getPuntos();
+          removeObject(scroll);
+          removeObject(puntos);
+          super.borra();
+          borra();
           setBackground(im);
-          Nivel2 level2=new Nivel2(vida);
+          Greenfoot.delay(100);
+          Nivel2 level2=new Nivel2(vida,puntos);
           level2.setValor(mark);
          Greenfoot.setWorld(level2); 
         }
+       
+   }
+   
+  public void eliminVida()
+   {
         if(player.tocaEnemigo()!=0)
-       { vida.cuentaVida(player.tocaEnemigo());
-       puntos.setValue(player.getPuntos());
+       { 
+        vida.cuentaVida(player.tocaEnemigo());
+        puntos.setValue(player.getPuntos());
         mark=player.getPuntos();
       }else{
           
@@ -82,23 +85,24 @@ public class Nivel1 extends World
           Greenfoot.setWorld(menu);
           
         }
-   }
+    }
+    
    
-   /**
+  /**
     * Muestra los diferentes objetos en el nivel 1
     */
     public void prepare()
     {
         
-        addObject(scroll,50,300);
-        addObject(player,50,300);
-        
+        addObject(scroll,50,200);
+        addObject(player,180,300);
         addObject(vida,200,50);
         Manzana manzana = new Manzana();
         addObject(manzana,300,300);
         addObject(puntos, 500,50);
         
     }
+    
     
     /**
      * La animacion de los diferentes enemigos asi como obtaculos.
@@ -113,45 +117,20 @@ public class Nivel1 extends World
   }
   
   /**
-   * Metodo que crea a los enemigos en el mundo
-   */
-  public void creaObjetos()
-  {int objeto= Greenfoot.getRandomNumber(5);
-      
-   if(timer.millisElapsed()>800)
-        {
-            
-            if(objeto==1)
-            {
-            addObject(toronja,900,330);
-          }else if(objeto==2)
-            {
-            addObject(uva,900,330);
-          }else if(objeto==3)
-            {
-            addObject(platano,900,330);
-          }
-            timer.mark();
-        } 
-    }
-    
-   public int val()
-    {
-        return mark;
-    }
-    
-    public void CreaEnemigos()
+     * Metodo que crea a los enemigos.
+  */
+  public void CreaEnemigos()
     {
         int objeto= Greenfoot.getRandomNumber(5)+1;
-        if(timer2.millisElapsed()>2000)
+        if(timer2.millisElapsed()>3000)
         {
-            System.out.println(objeto+"Fuck you");
+           
             if(objeto==1)
             {
             addObject(gato,1300,330);
           }else if(objeto==2)
             {
-            addObject(marip,1300,330);
+            addObject(marip,1300,250);
           }else if(objeto==3)
             {
             addObject(barril,1300,330);
@@ -161,6 +140,19 @@ public class Nivel1 extends World
           }
             timer2.mark();
         } 
+    }
+  
+  public int val()
+    {
+        return mark;
+    }
+    
+    public void borra()
+    {
+        removeObject(perro);
+        removeObject(gato);
+        removeObject(barril);
+        removeObject(marip);
     }
 }
  

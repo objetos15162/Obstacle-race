@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Animacion()
-comment0.text=\r\n\ Constructor\r\n
-comment1.params=
-comment1.target=void\ act()
+comment0.target=Animacion
+comment0.text=\r\n\ \r\n\ Clase\ encargada\ del\ llamado\ a\ las\ imagenes\ de\ los\ objetos,\ para\ \r\n\ poder\ mostrar\ el\ movimiento\ de\ o\ el\ cambio\ de\ imagen.\r\n\ \r\n\ @author\ (Sanjuana\ David)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=inicio
+comment1.target=Animacion(greenfoot.GreenfootImage)
+comment1.text=\r\n\ Constructor\r\n
 comment2.params=nuevaImagen
 comment2.target=void\ setImagen(greenfoot.GreenfootImage)
 comment2.text=\r\n\ Crea\ la\ nueva\ imagen\r\n
@@ -14,6 +14,5 @@ comment4.params=
 comment4.target=void\ Update()
 comment4.text=\r\n\ Conteo\ de\ imagenes\r\n
 comment5.params=
-comment5.target=void\ Contar()
-comment5.text=\r\n\ Parametro\ de\ tiempo\r\n
+comment5.target=void\ cambio()
 numComments=6

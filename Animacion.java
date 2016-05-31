@@ -1,10 +1,9 @@
 import greenfoot.*;
 import java.util.*;
 /**
- * Write a description of class Animacion here.
  * 
  * Clase encargada del llamado a las imagenes de los objetos, para 
- * poder mostrar el movimiento de o el cambio de imagen
+ * poder mostrar el movimiento de o el cambio de imagen.
  * 
  * @author (Sanjuana David) 
  * @version (a version number or a date)
@@ -15,39 +14,28 @@ public class Animacion extends Actor
      * Act - do whatever the Animacion wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    LinkedList<GreenfootImage> animacion;
-    GreenfootImage actual;
-    int contadorDeImagenes;
-    Timer timer;
-    float tiempoCambio;
-    int x;
+    private LinkedList<GreenfootImage> animacion;
+    private GreenfootImage actual;
+    private int contadorDeImagenes;
+    private SimpleTimer timer;
+    private float tiempoCambio;
     
-    class tiempo extends TimerTask {
-		public void run() {
-		   
-			tiempoCambio+=1;
-			// aqui se puede escribir el codigo de la tarea que necesitamos ejecutar
-		                   }// end run()
-                                   }
-           
+          
    /**
     * Constructor
     */
-    public Animacion()
+    public Animacion(GreenfootImage inicio)
     {
         
-        actual=new GreenfootImage("jugadoroficial1.png");
+        //actual=new GreenfootImage("jugadoroficial1.png");
         contadorDeImagenes=0;
         tiempoCambio=0;
         animacion = new LinkedList<GreenfootImage>() ;
-        Contar();
+        timer=new SimpleTimer();
+        timer.mark();
         
     }
     
-     public void act() 
-    {
-        
-    }  
     
    /**
     * Crea la nueva imagen
@@ -79,23 +67,21 @@ public class Animacion extends Actor
         {
             if(tiempoCambio>2)
             {
-            contadorDeImagenes++;
-            actual=animacion.get(contadorDeImagenes);
-            tiempoCambio = 0;
+             contadorDeImagenes++;
+             actual=animacion.get(contadorDeImagenes);
+             tiempoCambio = 0;
             
             }
         }
     }
     
-    /**
-     * Parametro de tiempo
-     */
-    public void Contar()
+    public void cambio()
     {
-        this.tiempoCambio=0;
-        timer = new Timer();
-        timer.schedule(new tiempo(), 0, 100);
-    }
-    
-   
+          if(timer.millisElapsed()>100)
+          {
+          tiempoCambio+=1;
+          timer.mark();
+        }
+    } 
 }
+  

@@ -1,49 +1,42 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Serpiente here.
  * 
- * @author (your name) 
+ * Clase serpiente enemigo de jugador, indica el movimiento ya nimacion de 
+ * el objeto.
+ * 
+ * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Serpiente extends Actor
+public class Serpiente extends Enemigo
 {
-     int X,Y;
-     Animacion a=new Animacion();
+    private Animacion ser=new Animacion(new GreenfootImage("serpienteoficial1.png"));
     /**
      * Act - do whatever the Serpiente wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
       public Serpiente(int x,int y)
     {
-        X=x;
-        Y=y;
-         for(int i=1;i<3;i++)
+        super(x,y);
+         for(int i=1;i<5;i++)
         {
-            a.setImagen( new GreenfootImage("serpienteoficial"+i+".png"));
+            ser.setImagen( new GreenfootImage("serpienteoficial"+i+".png"));
             
         }
         
        
     }
     
+    /**
+     * Metodo act
+     */
     public void act() 
     {
         // Add your action code here.
-        setImage(a.dameActual());
-        X-=6;
-        setLocation(getX(),getY());
-        if(X<=0)
-        {
-            this.getWorld().removeObject(this);
-        }
+        setImage(ser.dameActual());
+        this.ser.cambio();
+        super.elimina();
+        //super.getX();
+        super.posicion();
     }  
-    
-     /**
-     * Regresa el valor de pacicion en x de el perro
-     */
-    public int getX()
-    {
-        return X;
-    }
 }

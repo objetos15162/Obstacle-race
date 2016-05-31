@@ -1,12 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Uva here.
  * 
- * @author (your name) 
+ * Esta clase es encarga de la fruta uva, dentro de ella se tiene su moviente,
+ * dentro de le mundo.
+
+ * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Uva extends Actor
+public class Uva extends Fruta
 {
     /**
      * Act - do whatever the Uva wants to do. This method is called whenever
@@ -14,14 +16,14 @@ public class Uva extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
-        int xn = Greenfoot.getRandomNumber(11) -5;
-        int yn = Greenfoot.getRandomNumber(11) -5;
-        setLocation(getX()+xn,getY()+yn);
-        move(-8);
-        if(getX()<=0)
-        {
-            this.getWorld().removeObject(this);
-        }
-    }    
+       super.move();
+       super.elimina();
+    }   
+   
+    /**
+     * Constructor
+     */
+   public Uva()
+   {
+    }
 }

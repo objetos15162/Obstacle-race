@@ -1,17 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Barril here.
  * 
  * Clase barril obtaculo de enemigo, maneja el moviento del barril.
  * 
  * @author (Sanjuana David) 
  * @version (a version number or a date)
  */
-public class Barril extends Actor
+public class Barril extends Enemigo
 {
-    int X,Y;
-    Animacion a=new Animacion();
+    
+    private Animacion barril=new Animacion( new GreenfootImage("barril1.png"));
     /**
      * Act - do whatever the Perro wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,11 +18,10 @@ public class Barril extends Actor
     
     public Barril(int x,int y)
     {
-        X=x;
-        Y=y;
+       super(x,y);
          for(int i=1;i<9;i++)
         {
-            a.setImagen( new GreenfootImage("barril"+i+".png"));
+            barril.setImagen( new GreenfootImage("barril"+i+".png"));
             
         }
     }
@@ -35,19 +33,11 @@ public class Barril extends Actor
      */
     public void act() 
     {
-        setImage(a.dameActual());
-        X-=7;
-        setLocation(X,Y);
-        if(getX()<0)
-            this.getWorld().removeObject(this);
-        
+        setImage(barril.dameActual());
+        this.barril.cambio();
+        super.elimina();
+        //super.getX();
+        super.posicion();
     }
-    
-    /**
-     * Pocicion en x de el barril
-     */
-    public int getX()
-    {
-        return X;
-    }   
+     
 }

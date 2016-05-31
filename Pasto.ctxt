@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Pasto
+comment0.text=\r\n\ Clase\ pasto,\ es\ un\ obtaculo.\r\n\ Muestra\ las\ imagenes\ de\ pasto.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=x\ y
+comment1.target=Pasto(int,\ int)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Perro\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ indica\ el\ movimiento\ de\ el\ barril.\r\n\ a\ si\ vomo\ su\ desplasamiento.\r\n
+numComments=3
