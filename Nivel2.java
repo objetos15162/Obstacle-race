@@ -13,8 +13,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Nivel2 extends Nivel
 {
     
-    private Oso oso = new Oso(600,330,true);
-    private Venado venado = new Venado(700,320);
+    private Oso oso = new Oso(600,330,1);
+    private Venado venado = new Venado(700,320,1);
     private Serpiente serp = new Serpiente(650,350);
     private Mariposa marip = new Mariposa(600,200);
     private Pasto pasto = new Pasto(750,340);

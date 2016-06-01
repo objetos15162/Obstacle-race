@@ -11,17 +11,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Oso extends Enemigo
 {
     private Animacion oso=new Animacion( new GreenfootImage("oso1.png"));
-    private boolean direction;
+    private int direction;
     /**
      * Act - do whatever the Perro wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    public Oso(int x, int y,boolean direccion)
+    public Oso(int x, int y,int direccion)
     {
         super(x,y);
         direction=direccion;
-        if(direction==true)
+        if(direction==1)
         {
          for(int i=1;i<5;i++)
         {
@@ -43,7 +43,7 @@ public class Oso extends Enemigo
      * te indica la diccion en x a decremetar para el movimiento.
      */
     public void act() 
-    { if(direction=true)
+    { if(direction==1)
        { 
         if(getWorld().getObjects(Oso.class)!=null)
         {
@@ -52,15 +52,24 @@ public class Oso extends Enemigo
         super.elimina();
         super.posicion();
        }
-    }else{
+    }else{if(direction==0)
+        {
         if(super.getX()<500)
         {
         setImage(oso.dameActual());
         this.oso.cambio();
         super.elimina();
         super.posicion2();
+         
+        if(super.getX()>=480)
+        {
+         getWorld().removeObject(this);
+         }
         }
    }
+  
+   }
   }
+  
 }
 

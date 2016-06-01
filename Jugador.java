@@ -166,7 +166,7 @@ public class Jugador extends Actor
      */
     public int tocaEnemigo()
      {
-        if(time.millisElapsed()>200)
+        if(time.millisElapsed()>500)
         {
       if(isTouching(Perro.class)||isTouching(Mariposa.class)||
       isTouching(Barril.class)||isTouching(Oso.class)||
@@ -176,7 +176,8 @@ public class Jugador extends Actor
       isTouching(Pasto.class))
       {
           if(vidas<13)
-          {vidas+=1;
+          {
+              vidas+=1;
             }else{
                 vidas=0;
             }

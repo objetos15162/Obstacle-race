@@ -14,24 +14,22 @@ public class Enemigo extends Actor
      * Act - do whatever the Enemigo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int x;
-    private int y;
+    
     
     public void act() 
     {
         elimina();
-        //super.getX();
+        super.getX();
         posicion();
     }   
     
     /**
      * Constructor
      */
-     public Enemigo(int X,int Y)
+     public Enemigo(int x,int y)
     {
           super();
-          x=X;
-          y=Y;
+         
     }
     
     /**
@@ -40,7 +38,7 @@ public class Enemigo extends Actor
      public void elimina()
     {
         
-       if(x<=0)
+       if(super.getX()<=0)
         {
             this.getWorld().removeObject(this);
         } 
@@ -51,8 +49,8 @@ public class Enemigo extends Actor
      */
      public void posicion()
     {
-        //int x;
-        if(x>0)
+        int x;
+        if(getX()>0)
         {
         x=super.getX();
         x-=7;
@@ -63,8 +61,8 @@ public class Enemigo extends Actor
     
      public void posicion2()
     {
-        //int x;
-        if(x<500)
+        int x;
+        if(getX()<500)
         {
         x=super.getX();
         x+=7;
@@ -72,5 +70,5 @@ public class Enemigo extends Actor
        elimina();
        }
     }
-    }
+  }
 

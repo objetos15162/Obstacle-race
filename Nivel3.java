@@ -12,11 +12,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Nivel3 extends Nivel
 {
     
-    private Oso oso = new Oso(600,330,true);
-    private Oso oso2= new Oso(0,330,false);
+    private Oso oso = new Oso(600,330,1);
+    private Oso oso2= new Oso(10,330,0);
     private Mariposa marip = new Mariposa(590,200);
-    private Venado venado = new Venado(600,330);
-    private Venado venado2 = new Venado(0,350);
+    private Venado venado = new Venado(600,330,1);
+    private Venado venado2 = new Venado(0,350,0);
     private Serpiente serp = new Serpiente(600,350);
     private Tronco tronco = new Tronco(650,350);
     private Piedra piedra = new Piedra(700,350);
@@ -120,7 +120,7 @@ public class Nivel3 extends Nivel
             addObject(serp,1300,380);
           }else if(objeto==5)
           {
-            addObject(venado2,10,340);
+            addObject(venado2,10,350);
             }else if(objeto==6)
             {
             addObject(oso2,100,350);
@@ -165,5 +165,6 @@ public class Nivel3 extends Nivel
     removeObject(tronco);
     removeObject(piedra);
     removeObject(oso2);
+    removeObject(venado2);
     }
 }
